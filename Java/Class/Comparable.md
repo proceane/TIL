@@ -2,6 +2,7 @@
 
 ## Definition
 
+Java의 기본 클래스 중 하나이다.  
 [Document](https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html)에 명시된 Comparable의 정의는 다음과 같다.  
 
 >This interface imposes a total ordering on the objects of each class that implements it.
