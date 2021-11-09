@@ -10,7 +10,7 @@
 1개 이상의 Bean을 등록할 때 사용한다.  
 개발자가 건드릴 수 없는 라이브러리를 사용할때 붙인다고 한다([출처](https://mangkyu.tistory.com/75))
 
-[@Bean]() 어노테이션 공부 후 링크 등록필요
+[@Bean](https://github.com/proceane/TIL/blob/master/Java/Spring/Annotation/%40Bean.md)에 대해서는 해당 링크 참조
 
 ## Example
 ```java
