@@ -27,9 +27,9 @@ Component 어노테이션은 위와 같이 구성되어있다.
 
 
 ### etc
-[여기](https://www.baeldung.com/spring-component-annotation)에 `@Component`에 대해 좀 더 자세히 설명하고있는 내용이 있다.
+[여기](https://www.baeldung.com/spring-component-annotation)에 `@Component`에 대해 좀 더 자세히 설명하고있다.
 
-`@Component`와 `@Bean`의 차이에 대해 해당 문서에서 설명하고 있는 내용이 있다.
+해당 문서에 `@Component`와 `@Bean`의 차이에 대해 작성된 내용이 있다.
 
 > @Component is a class-level annotation, but @Bean is at the method level, so @Component is only an option when a class's source code is editable. @Bean can always be used, but it's more verbose.
 
