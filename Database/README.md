@@ -5,5 +5,5 @@
 * [N + 1 Problem](https://github.com/proceane/TIL/blob/master/Database/Theory/N%2B1Problem.md)
 
 ## Command
-* [Explain]()
-* [Index]()
+* [Explain](https://github.com/proceane/TIL/tree/master/Database/Command/Explain)
+* [Index](https://github.com/proceane/TIL/tree/master/Database/Command/index)
