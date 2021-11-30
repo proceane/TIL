@@ -10,8 +10,9 @@
 AOP는 핵심기능과 공통기능을 분리한다.([출처](https://hongku.tistory.com/114))
 
 ## Term
-- Aspect
-- Advice
-- JointPoint
-- PointCut
-- Weaving
+[출처](https://hongku.tistory.com/114)
+- Aspect : 핵심 기능
+- Advice : Aspect의 기능 자체
+- JointPoint : Advice를 적용해야되는 부분(스프링에서 메소드)
+- PointCut : JointPoint의 부분으로 실제로 Advice가 적용되는 부분
+- Weaving : Advice를 핵심 기능에 적용하는 행위
