@@ -1,7 +1,8 @@
 # @ExceptionHandler
 
 ## Definition
-> Annotation for handling exceptions in specific handler classes and/or handler methods.
+> Annotation for handling exceptions in specific handler classes and/or handler methods.  
+
 [출처](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/ExceptionHandler.html)  
 번역하면, `@ExceptionHandler`는 특정 핸들러 클래스나 메소드에서 예외를 처리하는 어노테이션이라는 의미이다.
 
@@ -26,4 +27,3 @@
 - `@ResponseBody`를 함께 선언하여 응답 메시지 리턴
 - `HttpEntity<?>`나 `ResponseEntity<?>`
 - `void`
-
