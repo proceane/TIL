@@ -1,5 +1,5 @@
 # Architecture
-[Architecture](https://docs.spring.io/spring-security/reference/servlet/architecture.html)
+[Servlet Architecture](https://docs.spring.io/spring-security/reference/servlet/architecture.html)
 
 ## Filter
 스프링 시큐리티 서블릿은 서블릿 필터를 기반으로 하기때문에 필터를 먼저 살펴보는 것이 도움이 됩니다.  
