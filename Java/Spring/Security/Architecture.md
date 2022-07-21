@@ -36,3 +36,26 @@ FilterChainProxy가 빈이기 때문에 그것은 DelegatingFilterProxy로 감�
 5. DelegatingFilterProxy 내부에는 FilterChainProxy가 있는데, FilterChainProxy에는 스프링 시큐리티에서 제공하는 SecurityFilterChain이 있다.  
 - FilterChainProxy는 빈으로 관리됨. 
 - 흐름은 DelegatingFilterProxy -> FilterChainProxy -> 만약 시큐리티 설정을 했다면 SecurityFilterChain
+
+그리고 짚고 넘어가야 하는것  
+Filter는 서블릿의 기능이고, DelegatingFilterProxy는 스프링 빈, FilterChainProxy는 스프링 시큐리티의 기능이다.  
+그리고 DelegatingFilterProxy와 FilterChainProxy는 둘다 필터로서 기능한다.
+
+### SecurityFilterChain
+SecurityFilterChain은 FilterChainProxy에서 요청에 대해 호출해야 하는 보안 필터를 결정하는 데 사용됩니다.  
+
+SecurityFilterChain은 Bean이지만 DelegatingFilterProxy 대신 FilterChainProxy에 등록됩니다.  
+FilterChainProxy는 서블릿 컨테이너 또는 DelegatingFilterProxy에 직접 등록할 때 많은 이점을 제공합니다.
+첫째, 스프링 시큐리티의 모든 서블릿 지원을 위한 시작점을 제공합니다.  
+둘째, FilterChainProxy는 스프링 시큐리티의 핵심이기때문에 필수 작업들을 수행할 수 있습니다.  
+예를 들면 메모리 누수를 피하기 위해 SecurityContext를 지우는데, 그것은 스프링 시큐리티의 HttpFirewall을 적용하여 특정 유형의 공격으로부터 애플리케이션을 보호해줍니다.  
+
+또한 SecurityFilterChain을 호출해야하는 시기를 결정할 때 더 많은 유연성을 제공합니다.  
+FilterChainProxy는 RequestMatcher를 활용하여 HttpServletRequest의 모든 항목을 기반으로 호출을 결정할 수 있습니다.  
+
+실제로 FilterChainProxy를 사용하여 어떤 SecurityFilterChain을 사용해야 하는지 결정할 수 있습니다.  
+이를 통해 애플리케이션의 여러 부분에 대해 완전히 별도의 설정을 제공할 수 있습니다.  
+
+예를 들면 uri이나 헤더나 쿠키로 시큐리티 설정을 구분할 수가 있음
+
+SecurityFilterChain 부분은 다시 보기로
