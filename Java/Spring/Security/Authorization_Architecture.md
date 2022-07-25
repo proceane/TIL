@@ -53,3 +53,18 @@ RequestMatcherDelegatingAuthorizationManager는 요청을 가장 적절한 위�
 - Custom Authorization Managers
 사용자 지정 AuthorizationManager를 구현할 수도 있고 원하는 액세스 제어 논리를 여기에 넣을 수도 있습니다.  
 애플리케이션에 따라 다르거나 일부 보안 관리 로직을 구현할 수도 있습니다.  
+
+## Adapting AccessDecisionManager and AccessDecisionVoters
+AuthorizationManager 이전에 스프링 시큐리티는 AccessDecisionManager 및 AccessDecisionVoter를 게시했습니다.  
+이전 애플리케이션 마이그레이션과 같은 일부 경우에는 AccessDecisionManager 또는 AccessDecisionVoter를 호출하는 AuthorizationManager를 도입하는 것이 바람직할 수 있습니다.  
+
+## Hierarchical Roles
+응용 프로그램의 특정 역할이 다른 역할을 자동으로 포함해야 하는 것은 일반적인 요구사항입니다.  
+예를 들면 관리자는 일반 사용자가 할 수 있는 모든 작업을 수행할 수 있기를 원하는 경우가 있습니다.  
+이를 달성하기 위해 모든 관리자에게 사용자 역할도 할당되었는지 확인할 수 있습니다.  
+
+Hierarchical Roles을 사용하면 다른 역할을 포함해야 하는 역할을 구성할 수 있습니다.  
+스프링 시큐리티의 RoleVoter 확장 버전인 RoleHierarchyVoter는 RoleHierarchy로 구성되며, 여기서 사용자에게 할당된 모든 접근 가능한 권한을 얻습니다.  
+
+Hierarchical Roles는 애플리케이션에 대한 액세스 제어 구성 데이터를 단순화하고 사용자에게 할당해야 하는 권한의 수를 줄이는 편리한 수단을 제공합니다.  
+더 복잡한 요구 사항의 경우 응용 프로그램에 필요한 특정 액세스 권한과 사용자에게 할당된 역할 간의 논리적 매핑을 정의히여 사용자 정보를 로드할 때 둘 사이를 변환할 수 있습니다.  
